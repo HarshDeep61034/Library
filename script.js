@@ -10,6 +10,8 @@ addEl.addEventListener('click', ()=>{
 
 // -------------------------------------------------------------------
 
+// Actual Library book addition, remove, read, display LOGIC
+
 let myLibrary = [
    
 ];
@@ -40,27 +42,43 @@ function bookDisplayer() {
     for(let i=y-1; i<x; i++){
         const book = document.createElement('div');
         book.classList.add('books');
+        book.setAttribute(`id`, `${i}`);
         book.innerHTML = `<div><h2>${myLibrary[i].title}</h2></div>
                            <div><h3>BY ~ ${myLibrary[i].author}</h3></div>
                            <div>${myLibrary[i].pages} Pages</div>
-                          <button data-attribute="${i}" onclick="remove()" class="remove">Remove</button> 
+                          <button data-attribute="${i}" onclick="remove(this)" class="remove">Remove</button> 
                           `;
       if(myLibrary[i].status === true){
-        book.innerHTML += `<button class="read" style="background-color: #22c55e;">Done</button>`;
+        book.innerHTML += `<button data-attr="${i}" data-parent="readed" id="${i}rd"onclick="readunread(this)"   class="read" style="background-color: #22c55e;">Done</button>`;
       }
       else{
-        book.innerHTML += `<button class="read">Read</button>`;
+        book.innerHTML += `<button data-attr="${i}" data-parent="not-readed" id="${i}rd"onclick="readunread(this)"  class="read">Read</button>`;
       }
         mainEl.appendChild(book);
        }
 }
 
-function done(){
-    
-}
-// function remove(data-attribute){
-//     var attribute = e.getAttribute("data-attribute");
-//     console.log((attribute));
-// }
 
+function remove(rmbtn){
+    var attribute = rmbtn.getAttribute("data-attribute");
+   var rmElement = document.getElementById(attribute);
+   console.log(rmElement);
+    rmElement.style.display = "none";
+}
+
+function readunread(rdbtn){
+  var attr = rdbtn.getAttribute("data-attr");
+ var rdElement = document.getElementById(`${attr}rd`);
+ var identify = rdElement.getAttribute("data-parent");
+ if(identify === "readed"){
+  rdElement.style.backgroundColor = " #38bdf8";
+  rdElement.textContent = "Read";
+  rdElement.setAttribute('data-parent', 'not-readed');
+ }
+  else{
+    rdElement.style.backgroundColor = "#22c55e"
+    rdElement.textContent = "Done";
+    rdElement.setAttribute('data-parent', 'readed');
+  }
+}
 
