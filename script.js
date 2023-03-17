@@ -39,7 +39,7 @@ function addBookToLibrary() {
 function bookDisplayer() {
     let x = myLibrary.length;
     let y = mainEl.childElementCount;
-    for(let i=y-1; i<x; i++){
+    for(let i=y-4; i<x; i++){
         const book = document.createElement('div');
         book.classList.add('books');
         book.setAttribute(`id`, `${i}`);
