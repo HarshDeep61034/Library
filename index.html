@@ -11,12 +11,30 @@
 
 <body>
 	<nav>
-
+		<div class="logo">Library</div>
+		<div id="login">Login</div>
 	</nav>
 	<main>
-
+		<div class="overlay">
+			<div class="form">
+				<h1>Add new book</h1>
+				<input type="text" id="title" placeholder="Title">
+				<input type="text" id="author" placeholder="Author">
+				<input type="number" id="pages" placeholder="Pages">
+				<input type="text" id="img-url" placeholder="Image url">
+				<div><label for="read">Have you read it ?</label><input name="read" id="readed" type="checkbox"></div>
+				<button id="submit-btn">Submit</button>
+			</div>
+		</div>
+		<div class="add-btn-div">
+			<button id="add-btn">+ Add Book</button>
+		</div>
+		<div class="books-section">
+			<span class="heading">BOOKS :</span>
+		</div>
 	</main>
 	<footer>
+		Copyright &copy; 2023 <a href="https://github.com/harshdeep61034">HarshDeep61034</a>
 
 	</footer>
 	<script src="script.js"></script>
