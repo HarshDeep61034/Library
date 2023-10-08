@@ -41,7 +41,7 @@ To get started with the Library App, follow these steps:
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/library-app.git
+   git clone https://github.com/HarshDeep61034/Library
    ```
 
 2. Open the project directory.
