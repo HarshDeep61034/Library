@@ -84,12 +84,15 @@ const myLibrary = [
   ];		
 
 // the constructor...
-function Book(title, author, pages, readed, imgurlEl) {
+
+class Book{
+	constructor(title, author, pages, readed, imgurlEl){
 	this.title = title
 	this.author = author
 	this.pages = pages
 	this.readed = readed
 	this.imgurlEl = imgurlEl
+	}
 }
 
 // This will use Book constrcutor to make
